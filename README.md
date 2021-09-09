@@ -20,7 +20,7 @@ pip install -r requirements
 ```bash
 # 训练模型 
 # k指字典树的子节点数量，l指字典树的深度
-python src/train.py --image_dir train_images --model_output models -k 10 -l 5
+python -m src.train --image_dir train_images --model_output models -k 10 -l 5
 ```
 
 
