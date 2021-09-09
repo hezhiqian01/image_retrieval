@@ -26,6 +26,6 @@ python -m src.train --image_dir train_images --model_output models -k 10 -l 5
 
 # 4. 测试流程
 ```bash
-python src/predict.py --model_path models --images image_path --output prediction_result
+python -m src.predict --model_path models --images image_path --output prediction_result
 ```
 
