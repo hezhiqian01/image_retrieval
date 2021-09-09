@@ -9,7 +9,7 @@ import threading
 
 def get_logger():
     log = MyLog()
-    log.start("run", "./")
+    log.start("run", "./logs")
     return log.logger
 
 
@@ -57,7 +57,7 @@ class MyLog(object):
         formatter = logging.Formatter(
             "[%(asctime)s][%(thread)d][%(threadName)s][%(levelname)s]%(message)s[file:%(filename)s,func:%(funcName)s,line:%(lineno)d]")
         self.logger.setLevel(logging.INFO)
-        filepathname = self.__logpath + self.__logfilename + ".log"
+        filepathname = os.path.join(self.__logpath, self.__logfilename + ".log")
 
         # disable parent logger
         self.logger.propagate = 0
@@ -77,7 +77,7 @@ class MyLog(object):
 def __test():
     my_log = MyLog()
     my_log.logger.info('output console.')
-    my_log.start("run", "./")
+    my_log.start("run", "../logs")
     my_log.logger.info("asdsad")
     print("-------")
     my_log.logger.info("adasdas")
